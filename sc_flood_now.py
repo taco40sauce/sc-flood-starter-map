@@ -134,13 +134,15 @@ def load_outlines():
         feats = []
         for name, fips in sorted(COUNTY_FIPS.items()):
             z = get(NWS_ZONE_URL.format(fips=fips)).json()
-            geom = shape(z["geometry"]).simplify(0.001, preserve_topology=True)
+            # Some NWS zone shapes arrive as a collection of pieces; buffer(0)
+            # turns them into one standard (multi)polygon.
+            geom = shape(z["geometry"]).buffer(0).simplify(0.001, preserve_topology=True)
             feats.append({"type": "Feature", "geometry": mapping(geom),
                           "properties": {"name": name.title().replace("Mccormick", "McCormick"),
                                          "county": name, "fips": "45" + fips}})
         write_if_changed(counties_file, fc(feats))
         print(f"[outlines] built data/counties.geojson ({len(feats)} counties)")
-    counties = {f["properties"]["county"]: shape(f["geometry"])
+    counties = {f["properties"]["county"]: shape(f["geometry"]).buffer(0)
                 for f in json.loads(counties_file.read_text())["features"]}
     areas = {area: unary_union([counties[c] for c in names]).buffer(0)
              for area, names in AREAS.items()}
@@ -296,7 +298,12 @@ def main():
         print(f"[nws] FAILED ({exc}); keeping last files, minus anything expired")
 
     try:
-        closures = parse_scdot_kml(requests.get(SCDOT_URL, timeout=TIMEOUT).text)
+        r = requests.get(SCDOT_URL, timeout=TIMEOUT)
+        entries = len(re.findall(r"<Placemark\b", r.text))
+        print(f"[scdot] response {r.status_code}, {len(r.text):,} characters, "
+              f"{entries} entries before filtering")
+        r.raise_for_status()
+        closures = parse_scdot_kml(r.text)
         scdot_ok = True
         print(f"[scdot] {len(closures)} storm closures statewide")
     except Exception as exc:
