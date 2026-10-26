@@ -229,20 +229,30 @@ def parse_scdot_kml(text):
     One condition can span several Placemarks; they are grouped and pinned at
     the middle of the whole stretch."""
     groups = {}
-    for pm in re.findall(r"<Placemark\b.*?</Placemark>", text, re.S):
-        county = _field(pm, "County").upper()
+    tally = {"entries": 0, "county": 0, "status": 0, "not_planned": 0, "storm": 0}
+    for raw_pm in re.findall(r"<Placemark\b.*?</Placemark>", text, re.S):
+        tally["entries"] += 1
+        # The live feed may send the description's formatting encoded
+        # (&lt;b&gt;County:&lt;/b&gt;) or wrapped in CDATA; decode both so the
+        # fields can be read either way. Plain text is left unchanged.
+        pm = html.unescape(raw_pm.replace("<![CDATA[", "").replace("]]>", ""))
+        county = re.sub(r"\s+COUNTY$", "", _field(pm, "County").upper()).strip()
         if county not in COUNTY_FIPS:
             continue
+        tally["county"] += 1
         style = (re.search(r"<styleUrl>#(.*?)</styleUrl>", pm) or [None, ""])[1]
         if style not in SCDOT_STATUS:
             continue
+        tally["status"] += 1
         m = re.search(r"<b>Description:</b>(.*?)(?:<br/>GPS:|</span></p>|$)", pm, re.S)
         desc = re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", " ", m.group(1))).strip()) if m else ""
         if SCDOT_PLANNED_WORK.search(desc):
             continue
+        tally["not_planned"] += 1
         cause = cause_from_text(desc)
         if not cause:
             continue
+        tally["storm"] += 1
         coords = []
         for block in re.findall(r"<coordinates>(.*?)</coordinates>", pm, re.S):
             for triple in block.split():
@@ -281,6 +291,9 @@ def parse_scdot_kml(text):
                       "properties": {"name": f"{SCDOT_STATUS[g['style']]}: {ROAD_CAUSES[g['cause']]}",
                                      "county": g["county"], "description": "\n".join(lines)}})
     feats.sort(key=lambda f: (f["properties"]["county"], f["properties"]["name"]))
+    print(f"[scdot] read {tally['entries']} entries: {tally['county']} with an SC county, "
+          f"{tally['status']} closed/blocked/caution, {tally['not_planned']} not planned work, "
+          f"{tally['storm']} storm damage")
     return feats
 
 
@@ -302,6 +315,10 @@ def main():
         entries = len(re.findall(r"<Placemark\b", r.text))
         print(f"[scdot] response {r.status_code}, {len(r.text):,} characters, "
               f"{entries} entries before filtering")
+        first = re.search(r"<Placemark\b.*?</Placemark>", r.text, re.S)
+        if first:
+            sample = re.sub(r"\s+", " ", first.group(0))[:500]
+            print(f"[scdot] sample entry: {sample}")
         r.raise_for_status()
         closures = parse_scdot_kml(r.text)
         scdot_ok = True
