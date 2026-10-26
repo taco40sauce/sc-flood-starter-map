@@ -23,19 +23,19 @@ OUTLINE = "#555555"
 
 # area: (map name, center lon/lat, zoom, county list)
 AREAS = {
-    "sc": ("South Carolina Flood Roads", [-80.9, 33.85], 7,
+    "sc": ("South Carolina Flood Trouble Spots", [-80.9, 33.85], 7,
            "all 46 counties"),
-    "d1": ("SC ARES District 1 Flood Roads", [-82.35, 34.45], 9,
+    "d1": ("SC ARES District 1 Flood Trouble Spots", [-82.35, 34.45], 9,
            "Abbeville, Anderson, Edgefield, Greenville, Greenwood, McCormick, Oconee, Pickens"),
-    "d2": ("SC ARES District 2 Flood Roads", [-81.45, 34.75], 9,
+    "d2": ("SC ARES District 2 Flood Trouble Spots", [-81.45, 34.75], 9,
            "Cherokee, Chester, Lancaster, Laurens, Spartanburg, Union, York"),
-    "d3": ("SC ARES District 3 Flood Roads", [-81.15, 34.05], 9,
+    "d3": ("SC ARES District 3 Flood Trouble Spots", [-81.15, 34.05], 9,
            "Calhoun, Fairfield, Kershaw, Lexington, Newberry, Richland, Saluda"),
-    "d4": ("SC ARES District 4 Flood Roads", [-79.75, 34.3], 9,
+    "d4": ("SC ARES District 4 Flood Trouble Spots", [-79.75, 34.3], 9,
            "Chesterfield, Darlington, Dillon, Florence, Horry, Lee, Marion, Marlboro"),
-    "d5": ("SC ARES District 5 Flood Roads", [-80.1, 33.25], 9,
+    "d5": ("SC ARES District 5 Flood Trouble Spots", [-80.1, 33.25], 9,
            "Berkeley, Charleston, Clarendon, Dorchester, Georgetown, Orangeburg, Sumter, Williamsburg"),
-    "d6": ("SC ARES District 6 Flood Roads", [-81.0, 32.95], 9,
+    "d6": ("SC ARES District 6 Flood Trouble Spots", [-81.0, 32.95], 9,
            "Aiken, Allendale, Bamberg, Barnwell, Beaufort, Colleton, Hampton, Jasper"),
 }
 

@@ -8,7 +8,7 @@
   ]
  },
  "properties": {
-  "name": "SC ARES District 4 Flood Roads",
+  "name": "SC ARES District 4 Flood Trouble Spots",
   "description": "**Flood warnings, watches and storm road closures: SC ARES District 4: Chesterfield, Darlington, Dillon, Florence, Horry, Lee, Marion, Marlboro counties.**\n\n## Now\n**Red shaded area:** a flood warning is in effect.\n**Pale red area with a dashed edge:** a flood watch. Flooding is possible; be ready.\n**Red pin:** SCDOT reports the road closed or blocked by flooding, a washout, trees, or power lines.\n\nTap any symbol for details. Reload the page for the latest information; it updates about every five minutes from the National Weather Service and SCDOT.\n\nIf water covers the road, turn around. A road with no mark is not guaranteed safe. Follow your local NWS office and county emergency management.\n\n## Want more detail for your county?\nCounties can add creek crossings, past flooding and local road reports. See a full county example: [[https://umap.openstreetmap.fr/en/map/kershaw-county-flood-trouble-spots_1471681|Kershaw County Flood Trouble Spots]]. Setup guide: [[https://github.com/taco40sauce/sc-flood-starter-map/blob/main/SETUP-GUIDE.md|SETUP-GUIDE]].\n\nStarter map by KC4RC / Kershaw County ARES.",
   "zoom": 9,
   "onLoadPanel": "caption",
