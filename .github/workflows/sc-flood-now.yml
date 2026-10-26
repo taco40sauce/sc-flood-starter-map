@@ -1,0 +1,51 @@
+name: SC Flood Starter Feed
+
+# Rebuilds the live files in out/ (statewide + six SC ARES districts) from the
+# National Weather Service and SCDOT, and commits them only when something changed.
+#
+# Triggered every 5 minutes by cron-job.org (workflow_dispatch), with GitHub's own
+# schedule every 15 minutes as a backup. Can also be run by hand from the Actions tab.
+on:
+  workflow_dispatch: {}
+  schedule:
+    - cron: "*/15 * * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sc-flood-now
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install requirements
+        run: pip install -r requirements.txt
+
+      - name: Build the live files
+        run: python3 sc_flood_now.py
+
+      - name: Commit if changed
+        run: |
+          git config user.name "sc-flood-bot"
+          git config user.email "sc-flood-bot@users.noreply.github.com"
+          git add out/ data/
+          if git diff --cached --quiet; then
+            echo "Nothing changed."
+            exit 0
+          fi
+          git commit -m "Update SC flood starter files"
+          for i in 1 2 3; do
+            git pull --rebase && git push && exit 0
+            sleep 5
+          done
+          echo "Push failed after 3 tries" && exit 1

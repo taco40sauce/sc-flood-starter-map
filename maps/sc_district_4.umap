@@ -1,0 +1,122 @@
+{
+ "type": "umap",
+ "geometry": {
+  "type": "Point",
+  "coordinates": [
+   -79.75,
+   34.3
+  ]
+ },
+ "properties": {
+  "name": "SC ARES District 4 Flood Roads",
+  "description": "**Flood warnings, watches and storm road closures: SC ARES District 4: Chesterfield, Darlington, Dillon, Florence, Horry, Lee, Marion, Marlboro counties.**\n\n## Now\n**Red shaded area:** a flood warning is in effect.\n**Pale red area with a dashed edge:** a flood watch. Flooding is possible; be ready.\n**Red pin:** SCDOT reports the road closed or blocked by flooding, a washout, trees, or power lines.\n\nTap any symbol for details. Reload the page for the latest information; it updates about every five minutes from the National Weather Service and SCDOT.\n\nIf water covers the road, turn around. A road with no mark is not guaranteed safe. Follow your local NWS office and county emergency management.\n\n## Want more detail for your county?\nCounties can add creek crossings, past flooding and local road reports. See a full county example: [[https://umap.openstreetmap.fr/en/map/kershaw-county-flood-trouble-spots_1471681|Kershaw County Flood Trouble Spots]]. Setup guide: [[https://github.com/taco40sauce/sc-flood-starter-map/blob/main/SETUP-GUIDE.md|SETUP-GUIDE]].\n\nStarter map by KC4RC / Kershaw County ARES.",
+  "zoom": 9,
+  "onLoadPanel": "caption",
+  "captionBar": true,
+  "datalayersControl": true,
+  "tilelayersControl": true,
+  "scaleControl": true,
+  "searchControl": true,
+  "locateControl": true,
+  "fullscreenControl": true,
+  "scrollWheelZoom": true,
+  "displayPopupFooter": false,
+  "tilelayer": {
+   "name": "USGS Topo (elevation contours)",
+   "url_template": "https://basemap.nationalmap.gov/arcgis/rest/services/USGSTopo/MapServer/tile/{z}/{y}/{x}",
+   "attribution": "USGS The National Map",
+   "minZoom": 0,
+   "maxZoom": 16
+  }
+ },
+ "layers": [
+  {
+   "type": "FeatureCollection",
+   "features": [],
+   "properties": {
+    "displayOnLoad": true,
+    "browsable": true,
+    "inCaption": true,
+    "name": "Now: Flood watch (flooding possible)",
+    "description": "National Weather Service Flood Watches and Flash Flood Watches. Blank when no watch is in effect.",
+    "color": "#d7191c",
+    "fillOpacity": 0.07,
+    "weight": 1,
+    "dashArray": "6,6",
+    "opacity": 0.6,
+    "popupShape": "Panel",
+    "popupContentTemplate": "# {event}\n{headline}\n\nUntil: {expires}\n\nFlooding is possible. Check this map again before you drive.",
+    "remoteData": {
+     "url": "https://raw.githubusercontent.com/taco40sauce/sc-flood-starter-map/main/out/d4/watches.geojson",
+     "format": "geojson",
+     "dynamic": false,
+     "licence": "NOAA / National Weather Service (public domain)"
+    }
+   }
+  },
+  {
+   "type": "FeatureCollection",
+   "features": [],
+   "properties": {
+    "displayOnLoad": true,
+    "browsable": true,
+    "inCaption": true,
+    "name": "Now: Flood warnings",
+    "description": "National Weather Service Flood Warnings and Flash Flood Warnings. Blank when no warning is in effect.",
+    "color": "#d7191c",
+    "fillOpacity": 0.25,
+    "weight": 2,
+    "popupShape": "Panel",
+    "popupContentTemplate": "# {event}\n{headline}\n\nUntil: {expires}\n\n{instruction}",
+    "remoteData": {
+     "url": "https://raw.githubusercontent.com/taco40sauce/sc-flood-starter-map/main/out/d4/warnings.geojson",
+     "format": "geojson",
+     "dynamic": false,
+     "licence": "NOAA / National Weather Service (public domain)"
+    }
+   }
+  },
+  {
+   "type": "FeatureCollection",
+   "features": [],
+   "properties": {
+    "displayOnLoad": true,
+    "browsable": true,
+    "inCaption": true,
+    "name": "County lines and district edge",
+    "description": "County lines, and the outer edge of the area this map covers.",
+    "color": "#555555",
+    "weight": 2,
+    "opacity": 0.7,
+    "fill": false,
+    "interactive": false,
+    "remoteData": {
+     "url": "https://raw.githubusercontent.com/taco40sauce/sc-flood-starter-map/main/out/d4/outline.geojson",
+     "format": "geojson",
+     "dynamic": false,
+     "licence": "Outlines: NOAA / National Weather Service"
+    }
+   }
+  },
+  {
+   "type": "FeatureCollection",
+   "features": [],
+   "properties": {
+    "displayOnLoad": true,
+    "browsable": true,
+    "inCaption": true,
+    "name": "Now: SCDOT road closures (storm damage)",
+    "description": "Roads SCDOT reports closed or blocked by flooding, washouts, trees or power lines. Planned work zones are left out. Some closures are long-term (for example, a washed-out road awaiting repair).",
+    "color": "#d7191c",
+    "iconClass": "Default",
+    "popupContentTemplate": "# {name}\n{description}\n\nNever drive into water over a road. Six inches of moving water can stall a car, and a foot can carry it away. Turn around, don't drown.",
+    "remoteData": {
+     "url": "https://raw.githubusercontent.com/taco40sauce/sc-flood-starter-map/main/out/d4/closures.geojson",
+     "format": "geojson",
+     "dynamic": false,
+     "licence": "SCDOT road conditions (public)"
+    }
+   }
+  }
+ ]
+}
