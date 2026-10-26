@@ -11,6 +11,10 @@ county maps like the
 [Kershaw County Flood Trouble Spots](https://umap.openstreetmap.fr/en/map/kershaw-county-flood-trouble-spots_1471681)
 map. See [SETUP-GUIDE.md](SETUP-GUIDE.md).
 
+**Live maps:**
+- [South Carolina Flood Trouble Spots](https://umap.openstreetmap.fr/en/map/south-carolina-flood-trouble-spots_1476690) (statewide)
+- District maps: coming soon
+
 Built by KC4RC / Kershaw County ARES. Open source (MIT).
 
 ## What the maps show
