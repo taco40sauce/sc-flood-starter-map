@@ -1,4 +1,125 @@
 {
- "features": [],
+ "features": [
+  {
+   "geometry": {
+    "coordinates": [
+     -80.92748,
+     33.764171
+    ],
+    "type": "Point"
+   },
+   "properties": {
+    "county": "CALHOUN",
+    "description": "**BRANHAM BRANCH RD: From Spanish Moss (MP 0) to Lower Boone Trail (MP 0.92)**\nCalhoun County\nClosed due to separation in 36\" pipe. Sinkhole in road. Emergency Condition\nSince 10/20/2026\nSource: SCDOT road conditions",
+    "name": "Road closed: bridge or washout damage"
+   },
+   "type": "Feature"
+  },
+  {
+   "geometry": {
+    "coordinates": [
+     -82.253937,
+     35.094781
+    ],
+    "type": "Point"
+   },
+   "properties": {
+    "county": "GREENVILLE",
+    "description": "**PLEASANT HILL RD: From One side of bridge (MP 2.01) to Other side of bridge (MP 2.03)**\nGreenville County\nPartial or full collapse of bridge. Emergency Condition\nSince 05/06/2025\nSource: SCDOT road conditions",
+    "name": "Road closed: bridge or washout damage"
+   },
+   "type": "Feature"
+  },
+  {
+   "geometry": {
+    "coordinates": [
+     -81.48312,
+     33.972827
+    ],
+    "type": "Point"
+   },
+   "properties": {
+    "county": "LEXINGTON",
+    "description": "**DEVILS BACKBONE ROAD: From Caney Branch Road (MP 3.77) to Dog Leg Road (MP 3.89)**\nLexington County\nClosed due to culvert washout. Emergency Condition\nSince 06/21/2023\nSource: SCDOT road conditions",
+    "name": "Road closed: bridge or washout damage"
+   },
+   "type": "Feature"
+  },
+  {
+   "geometry": {
+    "coordinates": [
+     -81.096562,
+     33.955881
+    ],
+    "type": "Point"
+   },
+   "properties": {
+    "county": "LEXINGTON",
+    "description": "**DURHAM DRIVE: From Pembrook Dr (Local Road) (MP 0.08) to Baywater Dr (Local Road) (MP 0.23)**\nLexington County\nClosure due to dam failure. Changes on 6/24/2022 - Changed (Damage Type) Flooding to Infrastructure Damage; (From) Tarrytown Ln to Pembrook Dr; (To) Woodhurst Dr to Baywater Dr; and (Work End Date) from 01/01/2020 to 01/01/2032. Historic Rain Event (10-2015)\nSince 10/06/2015\nSource: SCDOT road conditions",
+    "name": "Road closed: flooding"
+   },
+   "type": "Feature"
+  },
+  {
+   "geometry": {
+    "coordinates": [
+     -80.956812,
+     34.050184
+    ],
+    "type": "Point"
+   },
+   "properties": {
+    "county": "RICHLAND",
+    "description": "**ARCADIA LAKES DRIVE EAST: From North Trenhom Rd (S-33) (MP 0) to Sandwood Drive (S-2348) (MP 0.45)**\nRichland County\nClosure due to dam failure. Historic Rain Event (10-2015)\nSince 10/04/2015\nSource: SCDOT road conditions",
+    "name": "Road closed: flooding"
+   },
+   "type": "Feature"
+  },
+  {
+   "geometry": {
+    "coordinates": [
+     -80.955621,
+     34.083943
+    ],
+    "type": "Point"
+   },
+   "properties": {
+    "county": "RICHLAND",
+    "description": "**OVERPOND ROAD: From S-1724 (Springpond Rd.) (MP 0) to S-2597 (Pinelake Rd.) (MP 0.1)**\nRichland County\nClosure due to dam failure. Historic Rain Event (10-2015)\nSince 10/06/2015\nSource: SCDOT road conditions",
+    "name": "Road closed: flooding"
+   },
+   "type": "Feature"
+  },
+  {
+   "geometry": {
+    "coordinates": [
+     -80.962933,
+     34.053708
+    ],
+    "type": "Point"
+   },
+   "properties": {
+    "county": "RICHLAND",
+    "description": "**ARCADIA LAKES DRIVE: From L-3410 Arcadia Woods Rd (MP 0.54) to L-340 Arcadia Wooods Rd (MP 0.7)**\nRichland County\nClosure due to dam failure. Historic Rain Event (10-2015)\nSince 10/12/2015\nSource: SCDOT road conditions",
+    "name": "Road closed: flooding"
+   },
+   "type": "Feature"
+  },
+  {
+   "geometry": {
+    "coordinates": [
+     -80.954594,
+     34.076646
+    ],
+    "type": "Point"
+   },
+   "properties": {
+    "county": "RICHLAND",
+    "description": "**CREEKWOOD DR.: From Jeanette Dr. (MP 0) to Sara Dr. (MP 0.57)**\nRichland County\nClosed due to dam failure. Emergency Condition\nSince 03/21/2018\nSource: SCDOT road conditions",
+    "name": "Road closed: flooding"
+   },
+   "type": "Feature"
+  }
+ ],
  "type": "FeatureCollection"
 }

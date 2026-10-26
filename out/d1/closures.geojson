@@ -1,4 +1,20 @@
 {
- "features": [],
+ "features": [
+  {
+   "geometry": {
+    "coordinates": [
+     -82.253937,
+     35.094781
+    ],
+    "type": "Point"
+   },
+   "properties": {
+    "county": "GREENVILLE",
+    "description": "**PLEASANT HILL RD: From One side of bridge (MP 2.01) to Other side of bridge (MP 2.03)**\nGreenville County\nPartial or full collapse of bridge. Emergency Condition\nSince 05/06/2025\nSource: SCDOT road conditions",
+    "name": "Road closed: bridge or washout damage"
+   },
+   "type": "Feature"
+  }
+ ],
  "type": "FeatureCollection"
 }
