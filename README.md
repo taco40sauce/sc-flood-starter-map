@@ -13,7 +13,12 @@ map. See [SETUP-GUIDE.md](SETUP-GUIDE.md).
 
 **Live maps:**
 - [South Carolina Flood Trouble Spots](https://umap.openstreetmap.fr/en/map/south-carolina-flood-trouble-spots_1476690) (statewide)
-- District maps: coming soon
+- [District 1](https://umap.openstreetmap.fr/en/map/sc-ares-district-1-flood-trouble-spots_1476693): Abbeville, Anderson, Edgefield, Greenville, Greenwood, McCormick, Oconee, Pickens
+- [District 2](https://umap.openstreetmap.fr/en/map/sc-ares-district-2-flood-trouble-spots_1476694): Cherokee, Chester, Lancaster, Laurens, Spartanburg, Union, York
+- [District 3](https://umap.openstreetmap.fr/en/map/sc-ares-district-3-flood-trouble-spots_1476692): Calhoun, Fairfield, Kershaw, Lexington, Newberry, Richland, Saluda
+- [District 4](https://umap.openstreetmap.fr/en/map/sc-ares-district-4-flood-trouble-spots_1476695): Chesterfield, Darlington, Dillon, Florence, Horry, Lee, Marion, Marlboro
+- [District 5](https://umap.openstreetmap.fr/en/map/sc-ares-district-5-flood-trouble-spots_1476697): Berkeley, Charleston, Clarendon, Dorchester, Georgetown, Orangeburg, Sumter, Williamsburg
+- [District 6](https://umap.openstreetmap.fr/en/map/sc-ares-district-6-flood-trouble-spots_1476698): Aiken, Allendale, Bamberg, Barnwell, Beaufort, Colleton, Hampton, Jasper
 
 Built by KC4RC / Kershaw County ARES. Open source (MIT).
 
