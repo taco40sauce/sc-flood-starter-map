@@ -92,8 +92,10 @@ county."** In short:
 ### Not comfortable running scripts?
 
 Steps 1 and 5 need a little Python. If your group would rather not, ask for
-help: [contact name and email to be added]. Send the county name, and the
-crossings and map file can be built for you.
+help by opening a request on this repo's
+[Issues page](https://github.com/taco40sauce/sc-flood-starter-map/issues)
+(click **New issue**; a free GitHub account is needed). Include the county
+name and who to contact, and the crossings and map file can be built for you.
 
 ## Step 5. Link it
 
