@@ -3,21 +3,6 @@
   {
    "geometry": {
     "coordinates": [
-     -80.92748,
-     33.764171
-    ],
-    "type": "Point"
-   },
-   "properties": {
-    "county": "CALHOUN",
-    "description": "**BRANHAM BRANCH RD: From Spanish Moss (MP 0) to Lower Boone Trail (MP 0.92)**\nCalhoun County\nClosed due to separation in 36\" pipe. Sinkhole in road. Emergency Condition\nSince 10/20/2026\nSource: SCDOT road conditions",
-    "name": "Road closed: bridge or washout damage"
-   },
-   "type": "Feature"
-  },
-  {
-   "geometry": {
-    "coordinates": [
      -82.253937,
      35.094781
     ],
