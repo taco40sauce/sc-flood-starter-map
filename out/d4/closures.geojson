@@ -1,4 +1,50 @@
 {
- "features": [],
+ "features": [
+  {
+   "geometry": {
+    "coordinates": [
+     -79.046607,
+     33.835006
+    ],
+    "type": "Point"
+   },
+   "properties": {
+    "county": "HORRY",
+    "description": "**THIRD AVENUE: From L124 (LAUREL STREET) (MP 12.18) to U.S. 501 BUSINESS (MP 12.25)**\nHorry County\nCITY OF CONWAY 2026 CHRISTMAS TREE LIGHTING\nSince 12/03/2026\nSource: SCDOT road conditions",
+    "name": "Road closed: trees or debris down"
+   },
+   "type": "Feature"
+  },
+  {
+   "geometry": {
+    "coordinates": [
+     -79.044868,
+     33.833562
+    ],
+    "type": "Point"
+   },
+   "properties": {
+    "county": "HORRY",
+    "description": "**MAIN STREET: From S.C. 905 (FOURTH AVENUE) (MP 1.59) to S.C. 90 (MP 3.34)**\nHorry County\nCITY OF CONWAY 2026 CHRISTMAS TREE LIGHTING\nSince 12/03/2026\nSource: SCDOT road conditions",
+    "name": "Road closed: trees or debris down"
+   },
+   "type": "Feature"
+  },
+  {
+   "geometry": {
+    "coordinates": [
+     -79.045765,
+     33.835428
+    ],
+    "type": "Point"
+   },
+   "properties": {
+    "county": "HORRY",
+    "description": "**SECOND AVENUE: From U.S. 501 BUSINESS (MAIN STREET) (MP 0) to L2224 (KINGSTON STREET) (MP 0.05)**\nHorry County\nCITY OF CONWAY 2026 CHRISTMAS TREE LIGHTING\nSince 12/03/2026\nSource: SCDOT road conditions",
+    "name": "Road closed: trees or debris down"
+   },
+   "type": "Feature"
+  }
+ ],
  "type": "FeatureCollection"
 }
